@@ -4,9 +4,12 @@ import Nav from './Nav'
 import Footer from './Footer'
 import Grain from './Grain'
 import Cursor from './Cursor'
+import { initLenis } from '../motion/lenis'
 
 export default function Shell() {
   const { pathname } = useLocation()
+  useEffect(() => initLenis(), [])
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname])
