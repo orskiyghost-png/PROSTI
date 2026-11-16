@@ -1,0 +1,12 @@
+.veil {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--void);
+  clip-path: inset(0 0 100% 0);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veil { display: none; }
+}

@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Footer from './Footer'
 import Grain from './Grain'
 import Cursor from './Cursor'
+import RouteTransition from './RouteTransition'
 import { initLenis } from '../motion/lenis'
 
 export default function Shell() {
@@ -19,7 +20,9 @@ export default function Shell() {
       <a className="skip-link micro" href="#main">К содержимому</a>
       <Nav />
       <main id="main" tabIndex={-1}>
-        <Outlet />
+        <RouteTransition>
+          <Outlet />
+        </RouteTransition>
       </main>
       <Footer />
       <Grain />
