@@ -1,7 +1,25 @@
 # PROGRESS — журнал работы
 
 ## Текущий этап
-**2 — motion-инфраструктура.** Готово. Сайт: https://orskiyghost-png.github.io/PROSTI/
+**3 — Home.** Готово. Сайт: https://orskiyghost-png.github.io/PROSTI/
+
+## Этап 3 — Home (сделано)
+- Hero: мега `SURKOV` с intro-плашкой (`PRINT ERROR`, один раз за сессию), плавающие фото,
+  позиция «Дизайн, который помнят руками», cue на Works.
+- `HeroVisual`: OGL-плоскость с noise-дисторшном, grayscale-текстурой, scrub по hero;
+  fallback `<img>` при reduced-motion и при ошибке WebGL.
+- `WorkIndex`: 3 избранных концепта, rule-rows, черная плашка-подсветка, hover-превью под курсором,
+  мобильные миниатюры; ссылки на `/works/:slug`.
+- `ProcessScroll`: sticky-секция 300svh, canvas-кадры 120 desktop / 60 mobile, прогрессивная загрузка
+  батчами, poster-fallback, 4 этапа, обратимость scrub; кадры грузятся только при подходе к секции.
+- Manifest: split-reveal по scrub (строки в масках, `aria-label` на h2).
+- Close: `LET'S TALK` → `/contact`.
+- Тесты (Chromium + preview, 1440/1280/1024/768/390/375): `scrollWidth === innerWidth`; hero 900px;
+  canvas рисует; этапы 35% → 80% → назад переключаются; reduced-motion — 3 статичных кадра, без canvas и intro;
+  hover-превью видно; WorkIndex lazy-обложки загружаются на мобильном; консоль без ошибок.
+- Исправлено: `useReducedMotion` (файл был пустым), путь импорта HeroVisual, skip-link теперь ≥ 44px.
+- Известное ограничение: в headless Chromium intro занимает ~2.9 s из-за software WebGL; на обычном GPU короче.
+- Коммиты: этим коммитом.
 
 ## Этап 2 — motion-инфраструктура (сделано)
 - `src/motion/lenis.ts`: Lenis только для `(pointer: fine)` и без `prefers-reduced-motion`; `ScrollTrigger.update`
@@ -15,7 +33,7 @@
 - Проверки (Chromium 157 + preview): прямой вход `/PROSTI/works/toner` — 200; переход Home → Works и
   Back/Forward дают правильные заголовки, плашка возвращается за экран; 375 / 390 / 768 / 1024 / 1440 —
   `scrollWidth === innerWidth`; body 16px; внешних/битых ссылок нет.
-- Известное ограничение: skip-link высотой 38px (<44px) — исправить в этапе аудита.
+- Известное ограничение: skip-link высотой 38px (<44px) — исправлено в этапе 3 (теперь ≥ 44px).
 - `public/favicon.svg` + link в `index.html` — убран 404 favicon из консоли.
 - Коммиты: `5c327bf`, `cc4978a`, `4d8595f`, `34d8aec`, favicon — этим коммитом.
 
@@ -79,5 +97,5 @@
 - Цены услуг — нет (не публикуются).
 
 ## Следующий шаг
-Этап 3: Home — hero с мега-именем и плавающими фото, index избранных работ, видеоскролл `process` по кадрам,
-manifest и close-плашка. Затем About, Works, Project, Services, Contact.
+Этап 4: About, Works, Project, Services, Contact, 404 по `DESIGN.md` §10 — без заглушек, с фильтром Works,
+аккордеоном Services и формой Contact с честным статусом доставки. Затем финальный аудит и деплой.
