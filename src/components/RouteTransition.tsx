@@ -6,18 +6,18 @@ import s from './RouteTransition.module.css'
 type Props = { children: ReactNode }
 type Phase = 'idle' | 'covering' | 'revealing' | 'history'
 
-const COVERED = 'inset(0)'
-const UNCOVERED = 'inset(0 0 100% 0)'
 const TRANSITION_DURATION = 0.55
 
 export default function RouteTransition({ children }: Props) {
   const navigate = useNavigate()
   const location = useLocation()
+  const navigateRef = useRef(navigate)
   const veilRef = useRef<HTMLDivElement>(null)
   const timelineRef = useRef<gsap.core.Tween | null>(null)
   const phaseRef = useRef<Phase>('idle')
   const pendingNavigateRef = useRef<(() => void) | null>(null)
   const lastRouteRef = useRef(`${location.pathname}${location.search}`)
+  navigateRef.current = navigate
 
   const focusMain = useCallback(() => {
     document.getElementById('main')?.focus({ preventScroll: true })
@@ -34,10 +34,11 @@ export default function RouteTransition({ children }: Props) {
     phaseRef.current = 'revealing'
     timelineRef.current?.kill()
     timelineRef.current = gsap.to(veil, {
-      clipPath: UNCOVERED,
+      yPercent: -100,
       duration: TRANSITION_DURATION,
       ease: 'power3.inOut',
       onComplete: () => {
+        gsap.set(veil, { yPercent: 100 })
         phaseRef.current = 'idle'
         timelineRef.current = null
         focusMain()
@@ -56,9 +57,9 @@ export default function RouteTransition({ children }: Props) {
     phaseRef.current = 'covering'
     timelineRef.current = gsap.fromTo(
       veil,
-      { clipPath: UNCOVERED },
+      { yPercent: 100 },
       {
-        clipPath: COVERED,
+        yPercent: 0,
         duration: TRANSITION_DURATION,
         ease: 'power3.inOut',
         onComplete: () => {
@@ -84,7 +85,7 @@ export default function RouteTransition({ children }: Props) {
     }
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      gsap.set(veilRef.current, { clipPath: UNCOVERED })
+      gsap.set(veilRef.current, { yPercent: 100 })
       phaseRef.current = 'idle'
       return
     }
@@ -123,7 +124,7 @@ export default function RouteTransition({ children }: Props) {
 
       event.preventDefault()
       const route = `${destination.pathname.slice(basePath.length - 1)}${destination.search}${destination.hash}`
-      pendingNavigateRef.current = () => navigate(route)
+      pendingNavigateRef.current = () => navigateRef.current(route)
       cover(() => {
         const commitNavigation = pendingNavigateRef.current
         pendingNavigateRef.current = null
@@ -138,14 +139,14 @@ export default function RouteTransition({ children }: Props) {
       pendingNavigateRef.current = null
       timelineRef.current?.kill()
       phaseRef.current = 'history'
-      gsap.set(veilRef.current, { clipPath: COVERED })
+      gsap.set(veilRef.current, { yPercent: 0 })
     }
 
     const onMotionChange = (event: MediaQueryListEvent) => {
       if (!event.matches || phaseRef.current === 'idle') return
       timelineRef.current?.kill()
       timelineRef.current = null
-      gsap.set(veilRef.current, { clipPath: UNCOVERED })
+      gsap.set(veilRef.current, { yPercent: 100 })
       phaseRef.current = 'idle'
       const commitNavigation = pendingNavigateRef.current
       pendingNavigateRef.current = null
@@ -164,7 +165,7 @@ export default function RouteTransition({ children }: Props) {
       timelineRef.current?.kill()
       timelineRef.current = null
     }
-  }, [cover, focusMain, navigate, reveal])
+  }, [cover, focusMain, reveal])
 
   return (
     <>
