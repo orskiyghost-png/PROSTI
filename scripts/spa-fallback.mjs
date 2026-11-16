@@ -15,4 +15,5 @@ for (const route of routes) {
   mkdirSync(join(file, '..'), { recursive: true })
   copyFileSync(index, file)
 }
+copyFileSync(index, join(dist, 'works', 'index.html'))
 console.log(`spa-fallback: 404.html + ${routes.length} routes`)
