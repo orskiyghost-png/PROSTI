@@ -1,7 +1,23 @@
 # PROGRESS — журнал работы
 
 ## Текущий этап
-**0B — каркас и деплой.** Готово. Сайт: https://orskiyghost-png.github.io/PROSTI/
+**2 — motion-инфраструктура.** Готово. Сайт: https://orskiyghost-png.github.io/PROSTI/
+
+## Этап 2 — motion-инфраструктура (сделано)
+- `src/motion/lenis.ts`: Lenis только для `(pointer: fine)` и без `prefers-reduced-motion`; `ScrollTrigger.update`
+  на scroll, кадр Lenis из `gsap.ticker`, безопасный teardown и реакция на смену media queries.
+- `src/components/RouteTransition.tsx`: общий переход между маршрутами. Плашка `--void` поднимается снизу
+  (550 ms), затем маршрут меняется и плашка уходит вверх (550 ms); `transform` + GSAP, уникальные переходы,
+  блокировка повторных кликов во время перехода.
+- Обработка ссылок: внешние, `target`, `download`, `rel="external"`, изменённые клики и hash-only ссылки
+  не перехватываются. Back/Forward приводят URL и экран к выбранной записи истории.
+- Reduced motion: Lenis не создаётся, плашка `display: none`, навигация мгновенная; scrollTop сбрасывается.
+- Проверки (Chromium 157 + preview): прямой вход `/PROSTI/works/toner` — 200; переход Home → Works и
+  Back/Forward дают правильные заголовки, плашка возвращается за экран; 375 / 390 / 768 / 1024 / 1440 —
+  `scrollWidth === innerWidth`; body 16px; внешних/битых ссылок нет.
+- Известное ограничение: skip-link высотой 38px (<44px) — исправить в этапе аудита.
+- `public/favicon.svg` + link в `index.html` — убран 404 favicon из консоли.
+- Коммиты: `5c327bf`, `cc4978a`, `4d8595f`, `34d8aec`, favicon — этим коммитом.
 
 ## Этап 0B — каркас (сделано)
 - Vite 8 + React 18 + TypeScript strict; react-router-dom, gsap, @gsap/react, lenis, ogl.
@@ -63,5 +79,5 @@
 - Цены услуг — нет (не публикуются).
 
 ## Следующий шаг
-Этап 2: Lenis + ScrollTrigger (`src/motion/`), переходы страниц, затем Home (hero, index, видеоскролл).
-Установить Chrome для Playwright (`npx playwright install chrome`) для DOM-замеров.
+Этап 3: Home — hero с мега-именем и плавающими фото, index избранных работ, видеоскролл `process` по кадрам,
+manifest и close-плашка. Затем About, Works, Project, Services, Contact.
