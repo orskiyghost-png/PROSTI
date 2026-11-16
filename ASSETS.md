@@ -16,6 +16,32 @@ CGI look, no smiling at camera, no stock-photo poses, no bokeh blobs, no lens fl
 
 Обозначения: **M** — must-have, **N** — nice-to-have. Статус: `todo` / `generated` / `processed`.
 
+## Статус генерации (обновлено координатором)
+
+Все must-have сгенерированы и лежат в `public/media/`. Формат — WebP, максимум 2400px по длинной стороне.
+
+| Файл | Статус |
+|---|---|
+| `hero-object.webp` | generated, 1:1 |
+| `float-01.webp` | generated, 3:4 |
+| `float-02.webp` | generated, 3:4 (4:5 не поддержан моделью) |
+| `about-portrait.webp` | generated, 3:4 |
+| `work-null-archive-cover.webp` | generated, 16:9 |
+| `work-toner-cover.webp` | generated, 4:5 |
+| `work-signal-cover.webp` | generated, 3:4 |
+| `work-concrete-cover.webp` | generated, 16:9 |
+| `tex-services.webp` | generated, 1:1, тайлится с оговоркой |
+| `contact-crowd.webp` | generated, 21:9 |
+| `contact-figure.webp` | generated, 3:4 |
+| `process-loop.mp4` | generated, Veo 3.1, 8s, 1280x720, 24fps, $3.20 |
+| `frames/desktop/process-0000..0119.webp` | processed, 120 кадров, 1280px, q70 |
+| `frames/mobile/process-0000..0059.webp` | processed, 60 кадров, 640px, q70 |
+| `process-poster-01..03.webp` | processed, кадры 0 / 60 / 119 |
+
+Nice-to-have (`float-03`, `about-space`, `work-null-archive-detail`, `work-toner-detail`) не генерировались.
+Все изображения — на белом фоне без альфы; вырезанные фигуры встраивать через `mix-blend-mode: multiply`
+на бумажном фоне. Исходники генерации вне репозитория.
+
 ---
 
 ### 1. `hero-object.webp` — M — todo
