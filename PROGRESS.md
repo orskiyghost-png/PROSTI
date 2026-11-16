@@ -1,7 +1,30 @@
 # PROGRESS — журнал работы
 
 ## Текущий этап
-**4 — внутренние страницы.** Готово. Дальше финальный аудит и проверка деплоя.
+**6 — финальный аудит и деплой.** Готово. Сайт live: https://orskiyghost-png.github.io/PROSTI/
+
+## Этап 5–6 — деплой и финальный аудит (сделано)
+- `npm run build` проходит без ошибок TS. Сборка: JS 428.96 kB (gzip 144.15 kB), CSS 72.89 kB (gzip 23.67 kB).
+- GitHub Actions run `43977722799` на коммите `1e820ca` — success, Pages обновлён.
+- Live-проверка: `/PROSTI/`, `/about`, `/works`, `/works/toner`, `/works/signal-0`, `/works/null-archive`,
+  `/works/concrete-dev`, `/services`, `/contact` — HTTP 200; прямой заход на вложенный роут работает.
+  `/PROSTI/nope` — HTTP 404, при этом отдаётся SPA-страница 404. Ожидаемая консольная ошибка браузера
+  относится к загрузке самого документа, а не к приложению.
+- Ширины 375 / 390 / 768 / 1024 / 1280 / 1440: `scrollWidth === innerWidth`, один `h1`, body 16px,
+  тап-цели ≥ 44px на всех маршрутах. Битых изображений нет; после прокрутки все изображения загружены.
+- Проверено на live и preview: фильтр Works (`aria-pressed`, счётчик, мобильный tap), аккордеон Services
+  (мышь и клавиатура, `aria-expanded`, `role="region"`), валидация Contact (фокус на первом поле,
+  `aria-invalid`, `aria-describedby`), честный статус при пустом `formEndpoint`, переход Works → Project →
+  следующий проект, мобильное меню (focus trap, `Esc`, блокировка скролла, закрытие при переходе),
+  route veil и возврат назад, hover-превью WorkIndex, ленивые кадры ProcessScroll (до подхода к секции — 0
+  запросов, после — загружаются батчами), обратный скролл возвращает reveal-блоки и кадры.
+- Reduced-motion: без canvas на Works / Project / 404, статичный halftone на About / Contact, все
+  reveal-блоки видимы, навигация мгновенная, intro не показывается.
+- Исправлено в аудите: skip-link ≥ 44px; `useReducedMotion` работает; импорт HeroVisual; поля Contact ≥ 46px;
+  обложка Project ≤ 78svh; `key={project.slug}` для ProjectCover; `config.ts` без `as const`;
+  ProcessScroll грузит кадры только при подходе к секции.
+- Известные ограничения: intro в headless Chromium ~2.9 s (software WebGL); WebGL-обложка Project на
+  software-GPU появляется ~1.5 s, до этого виден `<img>`; `/PROSTI/nope` законно отдаёт HTTP 404.
 
 ## Этап 4 — About, Works, Project, Services, Contact, 404 (сделано)
 - **About**: мега `ABOUT`, анонимный портрет-стенд-ин с canvas-halftone (scrub, точки крупнее → мельче),
@@ -100,9 +123,8 @@
 - `docs: add design system, agent rules, asset prompts and progress log` (этап 0A).
 
 ## Осталось
-1. 5 — GitHub Actions + Pages: проверить деплой на реальном адресе после этапа 4.
-2. 6 — финальный аудит: 375/390/768/1024/1440, консоль, reduced-motion, обратный скролл, прямые заходы,
-   production build; исправить найденное.
+Нет. Все этапы BRIEF закрыты. Перед публикацией реальных данных заполнить `src/config.ts` (контакты,
+фото, endpoint формы) — см. раздел ниже.
 
 ## Известные ограничения
 - Изображения нельзя открывать инструментом read (обрыв сессии). Визуальный контроль — DOM-замеры.
@@ -120,5 +142,5 @@
 - Цены услуг — нет (не публикуются).
 
 ## Следующий шаг
-Финальный аудит и деплой: пересобрать, проверить все маршруты на preview и на GitHub Pages,
-убедиться, что прямые заходы на `/works/:slug` отдают 200, консоль чистая, `git status` чистый.
+Заполнить реальные данные заказчика в `src/config.ts` (email, Telegram, телефон, город, фото, endpoint
+формы) и заменить stand-in фото. После этого — `npm run build`, commit, push.
