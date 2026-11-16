@@ -1,0 +1,68 @@
+.brand, .corner {
+  position: fixed;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0 var(--s-2);
+  mix-blend-mode: difference;
+  color: var(--on-void);
+}
+.brand { top: var(--s-2); left: 50%; transform: translateX(-50%); }
+
+.corners { display: contents; }
+.corner { display: none; gap: var(--s-2); }
+.c0 { top: var(--s-2); left: var(--margin); }
+.c1 { top: var(--s-2); right: var(--margin); }
+.c2 { bottom: var(--s-2); left: var(--margin); }
+.c3 { bottom: var(--s-2); right: var(--margin); }
+.num { opacity: .6; }
+.corner::after {
+  content: '';
+  position: absolute; left: var(--s-2); right: var(--s-2); bottom: 10px;
+  height: 1px; background: currentColor;
+  transform: scaleX(0); transform-origin: right;
+  transition: transform var(--d-short) var(--ease-out);
+}
+.corner:hover::after, .corner.active::after { transform: scaleX(1); transform-origin: left; }
+
+.toggle {
+  position: fixed; z-index: 70;
+  right: var(--s-4); bottom: var(--s-4);
+  min-width: 72px; min-height: var(--tap);
+  padding: 0 var(--s-4);
+  background: var(--ink); color: var(--on-void);
+}
+.toggle:focus-visible { outline-color: var(--ink); }
+
+.panel {
+  position: fixed; inset: 0; z-index: 60;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: var(--s-8) var(--margin) var(--s-10);
+  background: var(--void); color: var(--on-void);
+  clip-path: inset(100% 0 0 0);
+  visibility: hidden;
+  transition: clip-path var(--d-med) var(--ease-inout), visibility 0s linear var(--d-med);
+}
+.panel.open { clip-path: inset(0 0 0 0); visibility: visible; transition: clip-path var(--d-med) var(--ease-inout); }
+.panelHead { color: var(--on-void-2); padding-bottom: var(--s-4); border-bottom: 1px solid var(--rule-void); }
+.list { list-style: none; }
+.list li { border-bottom: 1px solid var(--rule-void); }
+.big {
+  display: flex; align-items: baseline; gap: var(--s-4);
+  padding: var(--s-2) 0;
+  font-size: clamp(2.75rem, 13vw, 6rem); font-weight: 900;
+  line-height: .9; letter-spacing: -0.055em; text-transform: uppercase;
+}
+.big :global(.micro) { color: var(--on-void-2); letter-spacing: .08em; }
+.big:focus-visible { outline-color: var(--on-void); }
+.big.active { text-decoration: line-through; text-decoration-thickness: 4px; }
+
+@media (min-width: 1024px) {
+  .corner { display: inline-flex; }
+  .toggle, .panel { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel, .panel.open { transition: none; }
+}

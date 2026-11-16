@@ -1,0 +1,12 @@
+.cursor {
+  position: fixed; left: 0; top: 0; z-index: 100;
+  pointer-events: none; mix-blend-mode: difference;
+  opacity: 0; transition: opacity var(--d-micro) linear;
+}
+.visible { opacity: 1; }
+.dot {
+  position: absolute; left: -4px; top: -4px;
+  width: 8px; height: 8px; background: var(--on-void);
+  transition: transform var(--d-short) var(--ease-snap);
+}
+.hover .dot { transform: scale(5); }
