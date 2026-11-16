@@ -1,7 +1,34 @@
 # PROGRESS — журнал работы
 
 ## Текущий этап
-**3 — Home.** Готово. Сайт: https://orskiyghost-png.github.io/PROSTI/
+**4 — внутренние страницы.** Готово. Дальше финальный аудит и проверка деплоя.
+
+## Этап 4 — About, Works, Project, Services, Contact, 404 (сделано)
+- **About**: мега `ABOUT`, анонимный портрет-стенд-ин с canvas-halftone (scrub, точки крупнее → мельче),
+  fallback `<img>`, четыре принципа rule-rows, инструменты Mono-списком на чёрной плашке, переход к Works.
+- **Works**: мега `WORKS (04)`, пять фильтров (Все / UI/UX / Web Design / Web Development / App Design) с
+  реальной фильтрацией и `aria-pressed`, коллаж 12 колонок со сдвигами и разными пропорциями, SVG
+  `feTurbulence + feDisplacementMap` на hover и tap, подписи `CONCEPT`.
+- **Project**: полноширинная обложка с OGL-дисторшном и fallback, паспорт (год, роль, направление, статус),
+  задача → решение, экран-схема в коде, система, следующий проект. Неизвестный slug → 404. Reveal-блоки
+  `play reverse play reverse`.
+- **Services**: четыре направления, аккордеон с `aria-expanded` и `role="region"`, текст «что делаю /
+  что получаете / формат», фоновая фактура `tex-services`, без цен, CTA в Contact.
+- **Contact**: `;INFO` из `config.ts` (пустые значения не выдумываются, видна пометка «будет добавлено»),
+  фигура-стенд-ин и панорама-плашка на halftone, форма с валидацией, `aria-invalid`, `aria-describedby`,
+  `aria-live`. При пустом `formEndpoint` форма честно сообщает, что приём не настроен; при наличии email
+  открывает `mailto:`; при endpoint — POST. Ложной отправки нет.
+- **404**: мега `404` с SVG-displacement на hover, ссылка на главную.
+- Мета: у каждого маршрута свой `document.title` (`useDocumentTitle`).
+- Проверки (Chromium + preview): 1440 / 1280 / 1024 / 768 / 390 / 375 — `scrollWidth === innerWidth`,
+  один `h1`, body 16px, тап-цели ≥ 44px; фильтр Works, аккордеон Services, валидация и фокус формы,
+  переход Works → Project → следующий проект, 404 — работают; консоль без ошибок; reduced-motion —
+  без canvas на Works/Project/404, статичный halftone на About/Contact, все reveal-блоки видимы.
+- Исправлено: `config.ts` больше не сужает пустые строки до `never`; поля Contact ≥ 46px; обложка Project
+  ограничена 78svh; ProjectCover получает `key` при смене slug, чтобы не переиспользовать потерянный
+  WebGL-контекст.
+- Известное ограничение: WebGL-обложка Project на software-GPU появляется ~1.5 s; до этого виден `<img>`.
+- Коммиты: этим коммитом.
 
 ## Этап 3 — Home (сделано)
 - Hero: мега `SURKOV` с intro-плашкой (`PRINT ERROR`, один раз за сессию), плавающие фото,
@@ -73,13 +100,9 @@
 - `docs: add design system, agent rules, asset prompts and progress log` (этап 0A).
 
 ## Осталось
-1. 0B — генерация ассетов по `ASSETS.md` (must-have первыми), обработка: альфа-маски, AVIF/WebP, нарезка кадров видео.
-2. 1 — каркас: Vite + React + TS, роутинг basename `/PROSTI/`, 404 fallback, токены, шрифты, зерно.
-3. 2 — навигация, переходы страниц, Lenis + ScrollTrigger.
-4. 3 — Home (hero, index, видеоскролл, manifest, close).
-5. 4 — About, Works, Project, Services, Contact, 404.
-6. 5 — GitHub Actions + Pages, проверка на реальном адресе.
-7. 6 — аудит: адаптив, reduced-motion, консоль, производительность; циклы улучшений.
+1. 5 — GitHub Actions + Pages: проверить деплой на реальном адресе после этапа 4.
+2. 6 — финальный аудит: 375/390/768/1024/1440, консоль, reduced-motion, обратный скролл, прямые заходы,
+   production build; исправить найденное.
 
 ## Известные ограничения
 - Изображения нельзя открывать инструментом read (обрыв сессии). Визуальный контроль — DOM-замеры.
@@ -97,5 +120,5 @@
 - Цены услуг — нет (не публикуются).
 
 ## Следующий шаг
-Этап 4: About, Works, Project, Services, Contact, 404 по `DESIGN.md` §10 — без заглушек, с фильтром Works,
-аккордеоном Services и формой Contact с честным статусом доставки. Затем финальный аудит и деплой.
+Финальный аудит и деплой: пересобрать, проверить все маршруты на preview и на GitHub Pages,
+убедиться, что прямые заходы на `/works/:slug` отдают 200, консоль чистая, `git status` чистый.

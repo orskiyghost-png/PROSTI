@@ -12,4 +12,4 @@ export const config = {
   socials: [] as { label: string; url: string }[], // TODO: Behance, Dribbble, GitHub
   portrait: '', // TODO: реальное фото; сейчас stand-in
   formEndpoint: '', // TODO: Formspree и т.п.
-} as const
+}

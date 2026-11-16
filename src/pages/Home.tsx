@@ -6,6 +6,7 @@ import HeroVisual from '../components/home/HeroVisual'
 import WorkIndex from '../components/home/WorkIndex'
 import ProcessScroll from '../components/home/ProcessScroll'
 import { useReducedMotion } from '../motion/useReducedMotion'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import s from './Home.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -14,6 +15,7 @@ const base = import.meta.env.BASE_URL
 const INTRO_KEY = 'surkov-intro'
 
 export default function Home() {
+  useDocumentTitle('SURKOV — Design / Development')
   const reduced = useReducedMotion()
   const heroRef = useRef<HTMLElement>(null)
   const introRef = useRef<HTMLDivElement>(null)

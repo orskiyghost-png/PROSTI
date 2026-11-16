@@ -1,0 +1,252 @@
+.page {
+  min-height: 100svh;
+  padding: var(--s-10) var(--margin) var(--s-9);
+  overflow: clip;
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+  color: var(--ink-3);
+}
+.title {
+  margin: var(--s-5) 0 var(--s-5) -0.04em;
+  font-size: clamp(3.4rem, 15vw, 15rem);
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.rule {
+  height: 1px;
+  margin: 0 calc(var(--margin) * -1);
+  background: var(--rule);
+}
+.lead {
+  max-width: 42ch;
+  margin: var(--s-6) 0 0 auto;
+  color: var(--ink-2);
+  font-size: var(--t-lead);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+.info {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(220px, 4fr);
+  gap: var(--s-8);
+  align-items: start;
+  padding-top: var(--s-8);
+}
+.infoBlock {
+  display: grid;
+  gap: var(--s-3);
+}
+.infoBlock > :global(.micro) { color: var(--ink-3); }
+.infoTitle {
+  margin-bottom: var(--s-4);
+  font-size: var(--t-h2);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+.infoList {
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+.infoList div {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  gap: var(--s-4);
+  align-items: baseline;
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.infoList dt { color: var(--ink-3); }
+.infoList dd {
+  font-size: var(--t-h3);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+.infoList a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.infoList .pending dd { color: var(--ink-3); font-weight: 500; }
+.infoNote {
+  max-width: 46ch;
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px dashed var(--ink-3);
+  color: var(--ink-3);
+  line-height: 1.5;
+}
+.figure {
+  display: grid;
+  gap: var(--s-2);
+  justify-self: end;
+  width: min(100%, 380px);
+  margin: var(--s-5) 0 0 0;
+  padding: var(--s-2);
+  background: var(--paper);
+  box-shadow: 0 0 0 1px var(--ink);
+  transform: rotate(1.6deg);
+}
+.figureImage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+}
+.figure figcaption { color: var(--ink-3); padding-top: var(--s-1); }
+.band {
+  display: grid;
+  gap: var(--s-6);
+  margin: var(--gap-section) calc(var(--margin) * -1) 0;
+  padding: var(--s-8) var(--margin) 0;
+  background: var(--void);
+  color: var(--on-void);
+  overflow: clip;
+}
+.bandHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: var(--s-3) var(--s-8);
+  align-items: end;
+}
+.bandHead :global(.micro) { grid-column: 1 / -1; color: var(--on-void-2); }
+.bandTitle {
+  font-size: var(--t-h1);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+}
+.bandNote {
+  justify-self: end;
+  max-width: 30ch;
+  color: var(--on-void-2);
+  text-align: right;
+}
+.bandImage {
+  width: calc(100% + var(--margin) * 2);
+  aspect-ratio: 21 / 9;
+  margin-left: calc(var(--margin) * -1);
+}
+.formSection {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: var(--s-8);
+  padding-top: var(--gap-section);
+}
+.formHead {
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+}
+.formHead :global(.micro) { color: var(--ink-3); }
+.formTitle {
+  font-size: var(--t-h1);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+}
+.formNote {
+  max-width: 34ch;
+  color: var(--ink-3);
+  font-size: var(--t-small);
+}
+.form {
+  display: grid;
+  gap: var(--s-6);
+}
+.field {
+  display: grid;
+  gap: var(--s-2);
+}
+.field label { color: var(--ink-3); }
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: var(--s-2) 0 var(--s-3);
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--t-lead);
+  line-height: 1.3;
+}
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.field input:focus,
+.field textarea:focus { outline: 2px solid var(--ink); outline-offset: 4px; }
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] { border-bottom: 3px solid var(--ink); }
+.error { color: var(--ink); }
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4) var(--s-6);
+}
+.submit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: var(--tap);
+  padding-bottom: var(--s-1);
+  border-bottom: 2px solid currentColor;
+  font-size: var(--t-h3);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.submit span { transition: transform var(--d-short) var(--ease-snap); }
+.submit:hover span { transform: translate(5px, -5px); }
+.status {
+  max-width: 46ch;
+  min-height: 1.3em;
+  color: var(--ink-3);
+}
+.status.error { color: var(--ink); font-weight: 500; }
+.status.success { color: var(--ink); font-weight: 500; }
+@media (max-width: 1023px) {
+  .info { grid-template-columns: minmax(0, 6fr) minmax(200px, 4fr); }
+  .formSection { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); }
+}
+@media (max-width: 767px) {
+  .page { padding-top: var(--s-9); }
+  .title { font-size: clamp(3rem, 17vw, 6rem); }
+  .lead { margin-top: var(--s-5); font-size: var(--t-body); }
+  .info {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+    padding-top: var(--s-6);
+  }
+  .figure {
+    justify-self: start;
+    width: min(82%, 320px);
+    margin-left: var(--s-4);
+  }
+  .infoList div { grid-template-columns: 7rem minmax(0, 1fr); }
+  .infoList dd { font-size: var(--t-body); }
+  .band {
+    gap: var(--s-5);
+    margin-top: var(--s-10);
+    padding: var(--s-6) var(--margin) 0;
+  }
+  .bandHead { grid-template-columns: 1fr; }
+  .bandTitle { font-size: var(--t-h2); }
+  .bandNote { justify-self: start; text-align: left; }
+  .bandImage { aspect-ratio: 4 / 3; }
+  .formSection {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+    padding-top: var(--s-10);
+  }
+  .formTitle { font-size: var(--t-h2); }
+  .field input,
+  .field textarea { font-size: var(--t-body); }
+  .actions { display: grid; gap: var(--s-3); }
+  .submit { justify-self: start; font-size: var(--t-body); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .submit span { transition: none; }
+}
