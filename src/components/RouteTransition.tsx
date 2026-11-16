@@ -23,6 +23,10 @@ export default function RouteTransition({ children }: Props) {
     document.getElementById('main')?.focus({ preventScroll: true })
   }, [])
 
+  useLayoutEffect(() => {
+    gsap.set(veilRef.current, { y: window.innerHeight })
+  }, [])
+
   const reveal = useCallback(() => {
     const veil = veilRef.current
     if (!veil) {
@@ -34,11 +38,11 @@ export default function RouteTransition({ children }: Props) {
     phaseRef.current = 'revealing'
     timelineRef.current?.kill()
     timelineRef.current = gsap.to(veil, {
-      yPercent: -100,
+      y: -window.innerHeight,
       duration: TRANSITION_DURATION,
       ease: 'power3.inOut',
       onComplete: () => {
-        gsap.set(veil, { yPercent: 100 })
+        gsap.set(veil, { y: window.innerHeight })
         phaseRef.current = 'idle'
         timelineRef.current = null
         focusMain()
@@ -57,9 +61,9 @@ export default function RouteTransition({ children }: Props) {
     phaseRef.current = 'covering'
     timelineRef.current = gsap.fromTo(
       veil,
-      { yPercent: 100 },
+      { y: window.innerHeight },
       {
-        yPercent: 0,
+        y: 0,
         duration: TRANSITION_DURATION,
         ease: 'power3.inOut',
         onComplete: () => {
@@ -85,7 +89,7 @@ export default function RouteTransition({ children }: Props) {
     }
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      gsap.set(veilRef.current, { yPercent: 100 })
+      gsap.set(veilRef.current, { y: window.innerHeight })
       phaseRef.current = 'idle'
       return
     }
@@ -139,14 +143,14 @@ export default function RouteTransition({ children }: Props) {
       pendingNavigateRef.current = null
       timelineRef.current?.kill()
       phaseRef.current = 'history'
-      gsap.set(veilRef.current, { yPercent: 0 })
+      gsap.set(veilRef.current, { y: 0 })
     }
 
     const onMotionChange = (event: MediaQueryListEvent) => {
       if (!event.matches || phaseRef.current === 'idle') return
       timelineRef.current?.kill()
       timelineRef.current = null
-      gsap.set(veilRef.current, { yPercent: 100 })
+      gsap.set(veilRef.current, { y: window.innerHeight })
       phaseRef.current = 'idle'
       const commitNavigation = pendingNavigateRef.current
       pendingNavigateRef.current = null
