@@ -1,7 +1,7 @@
 .bar {
   position: fixed;
   inset: 0 0 auto;
-  z-index: 50;
+  z-index: 70;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,6 +12,14 @@
   color: var(--ink);
   border-bottom: 1px solid var(--rule-soft);
 }
+.barOpen {
+  background: var(--void);
+  color: var(--on-void);
+  border-bottom-color: var(--rule-void);
+}
+.barOpen .toggle { background: var(--paper); color: var(--ink); }
+.barOpen .brand:focus-visible,
+.barOpen .toggle:focus-visible { outline-color: var(--on-void); }
 .brand {
   display: inline-flex;
   align-items: center;

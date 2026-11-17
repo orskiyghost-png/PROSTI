@@ -45,7 +45,7 @@ export default function Nav() {
 
   return (
     <>
-      <header className={s.bar}>
+      <header className={`${s.bar} ${open ? s.barOpen : ''}`}>
         <Link to="/" className={`${s.brand} micro`} aria-label="SURKOV — на главную">
           SURKOV
         </Link>
