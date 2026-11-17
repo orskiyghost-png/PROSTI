@@ -45,27 +45,33 @@ export default function Nav() {
 
   return (
     <>
-      <Link to="/" className={`${s.brand} micro`} aria-label="SURKOV — на главную">
-        SURKOV
-      </Link>
-      <nav className={s.corners} aria-label="Основная навигация">
-        {items.map((l, i) => (
-          <NavLink key={l.to} to={l.to} className={({ isActive }) => `${s.corner} ${s[`c${i}`]} micro ${isActive ? s.active : ''}`}>
-            {l.label}
-          </NavLink>
-        ))}
-      </nav>
+      <header className={s.bar}>
+        <Link to="/" className={`${s.brand} micro`} aria-label="SURKOV — на главную">
+          SURKOV
+        </Link>
+        <nav className={s.nav} aria-label="Основная навигация">
+          {items.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              className={({ isActive }) => `${s.link} micro ${isActive ? s.active : ''}`}
+            >
+              {l.label}
+            </NavLink>
+          ))}
+        </nav>
+        <button
+          ref={btnRef}
+          type="button"
+          className={`${s.toggle} micro`}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? 'Close' : 'Menu'}
+        </button>
+      </header>
 
-      <button
-        ref={btnRef}
-        type="button"
-        className={`${s.toggle} micro`}
-        aria-expanded={open}
-        aria-controls="mobile-menu"
-        onClick={() => setOpen((v) => !v)}
-      >
-        {open ? 'Close' : 'Menu'}
-      </button>
       <div
         id="mobile-menu"
         ref={panelRef}

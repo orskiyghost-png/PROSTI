@@ -21,23 +21,12 @@
 }
 .brand:focus-visible { outline-color: var(--on-void); }
 .role { color: var(--on-void-2); }
-.links {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 var(--s-5);
-  padding: var(--s-2) 0;
-  border-top: 1px solid var(--rule-void);
-  border-bottom: 1px solid var(--rule-void);
-}
-.links a { display: inline-flex; align-items: center; min-height: var(--tap); }
-.links a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.links a:focus-visible { outline-color: var(--on-void); }
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--s-2) var(--s-5);
-  padding-top: var(--s-5);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--rule-void);
   color: var(--on-void-2);
 }
