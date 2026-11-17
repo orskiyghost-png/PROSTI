@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL
 const INTRO_KEY = 'surkov-intro'
 
 export default function Home() {
-  useDocumentTitle('SURKOV — Design / Development')
+  useDocumentTitle('SURKOV — Design and Development')
   const reduced = useReducedMotion()
   const heroRef = useRef<HTMLElement>(null)
   const introRef = useRef<HTMLDivElement>(null)
@@ -94,15 +94,15 @@ export default function Home() {
       <section ref={heroRef} className={s.hero} aria-labelledby="home-title">
         {intro && (
           <div ref={introRef} className={s.intro} aria-hidden="true">
-            <p className={`${s.introMeta} micro`}>[ SURKOV ] — PORTFOLIO / 2026</p>
+            <p className={`${s.introMeta} micro`}>SURKOV — PORTFOLIO</p>
             <p className={s.introWord}>PRINT<br />ERROR</p>
             <p className={`${s.introFoot} micro`}>Loading paper — please wait</p>
           </div>
         )}
 
         <div className={s.heroMeta}>
-          <p className="micro">ARTEM SURKOV — DESIGN / DEVELOPMENT</p>
-          <p className={`${s.heroRight} micro`}>PORTFOLIO / EDITION 01</p>
+          <p className="micro">ARTEM SURKOV — DESIGN · DEVELOPMENT</p>
+          <p className={`${s.heroRight} micro`}>PORTFOLIO · EDITION</p>
         </div>
 
         <h1 id="home-title" ref={nameRef} className={`${s.mega} ${intro ? s.introActive : ''}`} aria-label="SURKOV">
@@ -121,18 +121,18 @@ export default function Home() {
         <div className={s.floats} ref={floatRefs}>
           <figure className={`${s.float} ${s.floatA}`} data-float>
             <img src={`${base}media/float-01.webp`} alt="Фигура в длинном тёмном плаще с капюшоном на белом фоне" width="900" height="1200" />
-            <figcaption className="micro">FIG. 01 — SILHOUETTE</figcaption>
+            <figcaption className="micro">FIG — SILHOUETTE</figcaption>
           </figure>
           <figure className={`${s.float} ${s.floatB}`} data-float>
             <img src={`${base}media/float-02.webp`} alt="Руки держат лист бумаги над стеклом копира, свет сканера между пальцами" width="900" height="1200" />
-            <figcaption className="micro">FIG. 02 — TONER / LIGHT</figcaption>
+            <figcaption className="micro">FIG — TONER · LIGHT</figcaption>
           </figure>
         </div>
 
         <div className={s.heroFoot}>
           <p className={`${s.position} `}>Дизайн, который<br />помнят руками.</p>
-          <p className={`${s.disciplines} micro`}>UI/UX / WEB / DEV / APP</p>
-          <Link to="/works" className={`${s.scrollCue} micro`}>[ SCROLL ] <span aria-hidden="true">↓</span></Link>
+          <p className={`${s.disciplines} micro`}>UI UX · WEB · DEV · APP</p>
+          <Link to="/works" className={`${s.scrollCue} micro`}>SCROLL <span aria-hidden="true">↓</span></Link>
         </div>
       </section>
 
@@ -141,7 +141,7 @@ export default function Home() {
 
       <section ref={manifestRef} className={s.manifest} aria-labelledby="manifest-heading">
         <div className={s.manifestMeta}>
-          <p className="micro">[ 03 ] / Manifest</p>
+          <p className="micro">Manifest</p>
           <p className={`${s.manifestNote} micro`}>Печать, бумага, жест. Интерфейс должен оставлять след.</p>
         </div>
         <h2 id="manifest-heading" className={s.manifestText} aria-label="Дизайн, который помнят руками.">
@@ -150,11 +150,11 @@ export default function Home() {
           <span className={s.lineMask} aria-hidden="true"><span className={s.line} data-line>ПОМНЯТ</span></span>
           <span className={s.lineMask} aria-hidden="true"><span className={s.line} data-line>РУКАМИ.</span></span>
         </h2>
-        <p className={`${s.manifestFoot} micro`}>SURKOV / PRINT ERROR — 2026</p>
+        <p className={`${s.manifestFoot} micro`}>SURKOV · PRINT ERROR</p>
       </section>
 
       <section className={s.close} aria-labelledby="close-heading">
-        <p className="micro">[ 04 ] / Next</p>
+        <p className="micro">Next</p>
         <h2 id="close-heading" className={s.closeTitle}>LET&apos;S<br />TALK</h2>
         <Link to="/contact" className={s.closeLink}>Обсудить проект <span aria-hidden="true">↗</span></Link>
         <p className={`${s.closeNote} micro`}>Открыт к новым задачам. Контакты — на странице Contact.</p>

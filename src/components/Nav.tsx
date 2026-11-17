@@ -46,12 +46,12 @@ export default function Nav() {
   return (
     <>
       <Link to="/" className={`${s.brand} micro`} aria-label="SURKOV — на главную">
-        [ SURKOV ]
+        SURKOV
       </Link>
       <nav className={s.corners} aria-label="Основная навигация">
         {items.map((l, i) => (
           <NavLink key={l.to} to={l.to} className={({ isActive }) => `${s.corner} ${s[`c${i}`]} micro ${isActive ? s.active : ''}`}>
-            <span className={s.num}>[ {l.n} ]</span> {l.label}
+            {l.label}
           </NavLink>
         ))}
       </nav>
@@ -72,12 +72,11 @@ export default function Nav() {
         className={`${s.panel} ${open ? s.open : ''}`}
         aria-hidden={!open}
       >
-        <p className={`${s.panelHead} micro`}>Навигация / {navLinks.length.toString().padStart(2, '0')}</p>
+        <p className={`${s.panelHead} micro`}>Навигация</p>
         <ul className={s.list}>
           {navLinks.map((l) => (
             <li key={l.to}>
               <NavLink to={l.to} end={l.to === '/'} className={({ isActive }) => `${s.big} ${isActive ? s.active : ''}`} onClick={close}>
-                <span className="micro">{l.n}</span>
                 {l.label}
               </NavLink>
             </li>

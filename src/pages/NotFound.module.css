@@ -15,16 +15,14 @@
 }
 .title {
   align-self: center;
-  display: flex;
   margin-left: -0.05em;
-  font-size: clamp(8rem, 38vw, 32rem);
+  font-size: clamp(5rem, 22vw, 19rem);
   font-weight: 700;
   line-height: 0.72;
   letter-spacing: -0.07em;
   text-transform: uppercase;
   user-select: none;
 }
-.title span { display: block; }
 .rule {
   height: 1px;
   margin: 0 calc(var(--margin) * -1);
@@ -69,7 +67,7 @@
 }
 @media (max-width: 767px) {
   .page { padding-top: var(--s-9); }
-  .title { font-size: clamp(6rem, 40vw, 12rem); }
+  .title { font-size: clamp(5rem, 26vw, 10rem); }
   .body {
     display: grid;
     gap: var(--s-4);

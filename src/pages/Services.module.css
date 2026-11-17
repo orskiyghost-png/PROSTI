@@ -65,7 +65,7 @@
 .itemHeading { font: inherit; }
 .trigger {
   display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr) 2.5rem;
+  grid-template-columns: minmax(0, 1fr) 2.5rem;
   align-items: center;
   gap: var(--s-4);
   width: 100%;
@@ -75,11 +75,6 @@
 }
 .trigger:hover .name { transform: translateX(10px); }
 .trigger:focus-visible { outline-offset: -2px; }
-.num {
-  align-self: start;
-  padding-top: 0.5em;
-  color: var(--ink-3);
-}
 .name {
   font-size: clamp(2rem, 5.6vw, 5.5rem);
   font-weight: 700;
@@ -107,7 +102,7 @@
 .toggle span:last-child { transform: rotate(90deg); }
 .toggleOpen span:last-child { transform: rotate(0deg); }
 .panel {
-  padding: 0 0 var(--s-7) calc(3.5rem + var(--s-4));
+  padding: 0 0 var(--s-7) 0;
   animation: panelIn 360ms var(--ease-out) both;
 }
 .panelGrid {
@@ -166,7 +161,7 @@
   .texture img { opacity: 0.12; }
   .listSection { padding-top: var(--s-10); }
   .trigger {
-    grid-template-columns: 2rem minmax(0, 1fr) 2rem;
+    grid-template-columns: minmax(0, 1fr) 2rem;
     gap: var(--s-3);
     min-height: 84px;
     padding: var(--s-3) 0;
@@ -174,7 +169,7 @@
   .name { font-size: clamp(1.5rem, 8vw, 2.5rem); }
   .trigger:hover .name { transform: none; }
   .toggle { width: var(--s-5); height: var(--s-5); }
-  .panel { padding: 0 0 var(--s-6) calc(2rem + var(--s-3)); }
+  .panel { padding: 0 0 var(--s-6) 0; }
   .panelGrid { grid-template-columns: 1fr; gap: var(--s-4); }
   .panelGrid p:last-child { max-width: none; }
   .cta { margin-top: var(--s-10); padding: var(--s-7) var(--margin); }

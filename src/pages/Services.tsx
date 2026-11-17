@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL
 
 const services = [
   {
-    title: 'UI/UX',
+    title: 'UI UX',
     do: 'Исследование, сценарии, структура, прототипы и дизайн-система.',
     get: 'Карту пользовательских путей, wireframes, интерактивный прототип и UI-kit.',
     format: 'Продуктовый спринт или проект целиком.',
@@ -44,7 +44,7 @@ export default function Services() {
 
       <header className={s.head}>
         <div className={`${s.meta} micro`}>
-          <span>[ 03 ] / Services</span>
+          <span>Services</span>
           <span>Four directions — no prices</span>
         </div>
         <h1 className={s.title} lang="en">SERVICES</h1>
@@ -55,7 +55,7 @@ export default function Services() {
       </header>
 
       <section className={s.listSection} aria-labelledby="services-list-heading">
-        <h2 id="services-list-heading" className="micro">[ 03.1 ] / Направления</h2>
+        <h2 id="services-list-heading" className="micro">Направления</h2>
         <ol className={s.list}>
           {services.map((service, index) => {
             const isOpen = open === index
@@ -72,7 +72,6 @@ export default function Services() {
                     aria-controls={panelId}
                     onClick={() => setOpen(isOpen ? null : index)}
                   >
-                    <span className={`${s.num} micro`}>{String(index + 1).padStart(2, '0')}</span>
                     <span className={s.name}>{service.title}</span>
                     <span className={`${s.toggle} ${isOpen ? s.toggleOpen : ''}`} aria-hidden="true">
                       <span />
@@ -109,7 +108,7 @@ export default function Services() {
       </section>
 
       <section className={s.cta} aria-labelledby="services-cta-heading">
-        <p className="micro">[ 03.2 ] / Next</p>
+        <p className="micro">Next</p>
         <h2 id="services-cta-heading" className={s.ctaTitle}>НУЖЕН<br />ПРОЕКТ?</h2>
         <Link to="/contact" className={s.ctaLink}>Обсудить задачу <span aria-hidden="true">↗</span></Link>
       </section>

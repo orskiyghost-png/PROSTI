@@ -7,7 +7,6 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import s from './Works.module.css'
 
 const base = import.meta.env.BASE_URL
-const pad = (n: number) => String(n).padStart(2, '0')
 const dimensions = (ratio: string) => {
   const [w, h] = ratio.split('/').map((part) => Number(part.trim()))
   return { width: 1600, height: Math.round((1600 * h) / w) }
@@ -60,11 +59,11 @@ export default function Works() {
     <article className={s.page}>
       <header className={s.head}>
         <div className={`${s.meta} micro`}>
-          <span>[ 02 ] / Works</span>
+          <span>Works</span>
           <span>Four directions — one system</span>
         </div>
         <h1 className={s.title} lang="en">
-          WORKS <span className={`${s.count} micro`}>({pad(projects.length)})</span>
+          WORKS
         </h1>
         <div className={s.rule} aria-hidden="true" />
         <p className={s.lead}>
@@ -74,7 +73,6 @@ export default function Works() {
 
       <div className={s.filters} role="group" aria-label="Фильтр работ по направлению">
         {projectDirections.map((direction) => {
-          const total = direction === 'All' ? projects.length : projects.filter((p) => p.direction === direction).length
           return (
             <button
               key={direction}
@@ -84,7 +82,6 @@ export default function Works() {
               onClick={() => setFilter(direction)}
             >
               {direction === 'All' ? 'Все' : direction}
-              <span className="micro">{pad(total)}</span>
             </button>
           )
         })}
@@ -92,7 +89,6 @@ export default function Works() {
 
       <ul className={s.grid}>
         {visible.map((project, index) => {
-          const original = projects.indexOf(project)
           const dims = dimensions(project.ratio)
           return (
             <li key={`${filter}-${project.slug}`} className={`${s.item} ${s[`i${index}`]}`}>
@@ -116,9 +112,9 @@ export default function Works() {
                   <span className={`${s.view} micro`} aria-hidden="true">View <span>↗</span></span>
                 </figure>
                 <div className={s.caption}>
-                  <span className={`${s.captionIndex} micro`}>{pad(original + 1)} / {project.direction}</span>
+                  <span className={`${s.captionIndex} micro`}>{project.direction}</span>
                   <h2 className={s.name}>{project.title}</h2>
-                  <span className={`${s.captionMeta} micro`}>CONCEPT / {project.year}</span>
+                  <span className={`${s.captionMeta} micro`}>CONCEPT</span>
                 </div>
               </Link>
             </li>
@@ -127,7 +123,7 @@ export default function Works() {
       </ul>
 
       <p className={`${s.status} micro`} aria-live="polite">
-        Показано: {pad(visible.length)} / {pad(projects.length)}
+        Показано: {visible.length === projects.length ? 'все работы' : 'выбранные работы'}
       </p>
 
       <div className={s.next}>

@@ -3,7 +3,7 @@
 export const config = {
   name: 'Артём Сурков',
   nameLatin: 'ARTEM SURKOV',
-  role: 'DESIGN / DEVELOPMENT',
+  role: 'DESIGN · DEVELOPMENT',
   country: 'Россия',
   city: '', // TODO
   email: '', // TODO

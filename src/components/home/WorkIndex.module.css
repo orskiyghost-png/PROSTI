@@ -35,7 +35,7 @@
 .row {
   position: relative;
   display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr) auto 2rem;
+  grid-template-columns: minmax(0, 1fr) auto 2rem;
   align-items: center;
   gap: var(--s-4);
   min-height: 96px;
@@ -56,8 +56,6 @@
 .row:hover::before,
 .row:focus-visible::before { clip-path: inset(0); }
 .row:focus-visible { outline-offset: -2px; }
-.num { align-self: start; padding-top: 0.55em; color: var(--ink-3); transition: color var(--d-micro); }
-.row:hover .num { color: var(--on-void-2); }
 .name {
   font-size: clamp(1.75rem, 4.6vw, 4.5rem);
   font-weight: 700;
@@ -118,9 +116,9 @@
   color: var(--ink-3);
 }
 @media (max-width: 767px) {
-  .row { grid-template-columns: 2rem minmax(0, 1fr) 1.5rem; min-height: 88px; }
+  .row { grid-template-columns: minmax(0, 1fr) 1.5rem; min-height: 88px; }
   .meta { display: none; }
-  .thumb { display: block; grid-column: 2; margin-top: var(--s-2); }
+  .thumb { display: block; grid-column: 1; margin-top: var(--s-2); }
   .thumb img { width: 96px; height: 120px; object-fit: cover; filter: grayscale(1); }
   .preview { display: none; }
   .note { margin-left: 0; }

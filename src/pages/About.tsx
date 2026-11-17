@@ -29,7 +29,7 @@ const tools = [
   'Illustrator',
   'Photoshop',
   'After Effects',
-  'HTML / CSS',
+  'HTML и CSS',
   'TypeScript',
   'React',
   'GSAP',
@@ -43,8 +43,8 @@ export default function About() {
     <article className={s.page}>
       <header className={s.head}>
         <div className={`${s.meta} micro`}>
-          <span>[ 01 ] / About</span>
-          <span>Artem Surkov — Edition 01</span>
+          <span>About</span>
+          <span>Artem Surkov — Edition</span>
         </div>
 
         <h1 className={s.title} lang="en">ABOUT</h1>
@@ -56,9 +56,9 @@ export default function About() {
               Дизайнер интерфейсов и разработчик. Делаю сайты, приложения и системы, которые хочется трогать.
             </p>
             <div className={s.body}>
-              <p>Мне 20 лет. Живу и работаю в России.</p>
+              <p>Живу и работаю в России.</p>
               <p>
-                Четыре направления: UI/UX, веб-дизайн, фронтенд и приложения. Один способ думать:
+                Четыре направления: UI UX, веб-дизайн, фронтенд и приложения. Один способ думать:
                 сначала структура, потом характер, потом движение.
               </p>
               <p>
@@ -77,7 +77,7 @@ export default function About() {
               className={s.portraitImage}
             />
             <figcaption className={`${s.portraitCaption} micro`}>
-              <span>FIG. 01 — STAND-IN</span>
+              <span>FIG — STAND-IN</span>
               <span>Не реальное фото</span>
             </figcaption>
           </figure>
@@ -86,15 +86,14 @@ export default function About() {
 
       <section className={s.approach} aria-labelledby="approach-heading">
         <div className={s.sectionHead}>
-          <p className="micro">[ 01.1 ] / Approach</p>
+          <p className="micro">Approach</p>
           <h2 id="approach-heading" className={s.sectionTitle}>ПОДХОД</h2>
           <p className={s.sectionNote}>Четыре правила, по которым собирается каждая работа.</p>
         </div>
 
         <ol className={s.principles}>
-          {principles.map((item, index) => (
+          {principles.map((item) => (
             <li key={item.title} className={s.principle}>
-              <span className={`${s.principleNum} micro`}>{String(index + 1).padStart(2, '0')}</span>
               <h3 className={s.principleTitle}>{item.title}</h3>
               <p className={s.principleText}>{item.text}</p>
             </li>
@@ -104,16 +103,13 @@ export default function About() {
 
       <section className={s.tools} aria-labelledby="tools-heading">
         <div className={s.toolsHead}>
-          <p className="micro">[ 01.2 ] / Toolkit</p>
+          <p className="micro">Toolkit</p>
           <h2 id="tools-heading" className={s.toolsTitle}>ИНСТРУМЕНТЫ</h2>
           <p className={s.toolsNote}>Набор меняется под задачу. Эти — рабочие.</p>
         </div>
         <ul className={`${s.toolList} micro`}>
-          {tools.map((tool, index) => (
-            <li key={tool}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              {tool}
-            </li>
+          {tools.map((tool) => (
+            <li key={tool}>{tool}</li>
           ))}
         </ul>
       </section>

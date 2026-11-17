@@ -60,15 +60,13 @@
 }
 .stage {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0 var(--s-2);
+  grid-template-columns: minmax(0, 1fr);
   align-content: start;
   padding-top: var(--s-2);
   border-top: 1px solid var(--rule-void);
   color: var(--on-void-2);
   transition: color var(--d-short);
 }
-.stageId { color: inherit; }
 .stageTitle { font-weight: 700; letter-spacing: 0.01em; }
 .stageNote {
   grid-column: 1 / -1;

@@ -6,7 +6,6 @@ import s from './WorkIndex.module.css'
 
 const base = import.meta.env.BASE_URL
 const featured = projects.slice(0, 3)
-const pad = (n: number) => String(n).padStart(2, '0')
 
 export default function WorkIndex() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -50,13 +49,13 @@ export default function WorkIndex() {
   return (
     <section ref={sectionRef} className={s.section} aria-labelledby="index-heading">
       <header className={s.head}>
-        <p className="micro">[ 01 ] / Selected work</p>
-        <h2 id="index-heading" className={s.title}>ИЗБРАННОЕ <span className="micro">({pad(featured.length)})</span></h2>
+        <p className="micro">Selected work</p>
+        <h2 id="index-heading" className={s.title}>ИЗБРАННОЕ</h2>
         <p className={s.note}>Четыре направления. Один способ думать. Все проекты ниже — концепты.</p>
       </header>
 
       <ul className={s.list}>
-        {featured.map((project, index) => (
+        {featured.map((project) => (
           <li key={project.slug}>
             <Link
               to={`/works/${project.slug}`}
@@ -65,7 +64,6 @@ export default function WorkIndex() {
               onPointerEnter={() => setImage(project)}
               onFocus={() => setImage(project)}
             >
-              <span className={`${s.num} micro`}>{pad(index + 1)}</span>
               <span className={s.name}>{project.title}</span>
               <span className={s.thumb} aria-hidden="true">
                 <img src={`${base}${project.cover}`} alt="" loading="lazy" width="640" height="800" />
@@ -83,7 +81,7 @@ export default function WorkIndex() {
 
       <div ref={previewRef} className={s.preview} aria-hidden="true">
         <img ref={imageRef} src={`${base}${image.cover}`} alt="" width="640" height="800" />
-        <span className={`${s.previewLabel} micro`}>{image.title} / CONCEPT</span>
+        <span className={`${s.previewLabel} micro`}>{image.title} · CONCEPT</span>
       </div>
     </section>
   )

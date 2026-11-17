@@ -221,7 +221,7 @@ export default function ProcessScroll() {
     <section ref={sectionRef} className={`${s.section} ${staticMode ? s.static : ''}`} aria-labelledby="process-heading">
       <div className={s.sticky}>
         <header className={s.head}>
-          <p className="micro">[ 02 ] / Process — 8 sec</p>
+          <p className="micro">Process</p>
           <h2 id="process-heading" className={s.title}>PROCESS</h2>
           <p className={s.lead}>От первого наброска до последнего пикселя. Прокрутите — ролик идёт вперёд и назад.</p>
         </header>
@@ -230,8 +230,8 @@ export default function ProcessScroll() {
           <div className={s.staticFrames}>
             {POSTERS.map((src, i) => (
               <figure key={src}>
-                <img src={src} alt={`Кадр процесса ${i + 1} из 3`} loading="lazy" width="1280" height="720" />
-                <figcaption className="micro">{STAGES[i].id} / {STAGES[i].title}</figcaption>
+                <img src={src} alt="Кадр процесса" loading="lazy" width="1280" height="720" />
+                <figcaption className="micro">{STAGES[i].title}</figcaption>
               </figure>
             ))}
           </div>
@@ -263,13 +263,12 @@ export default function ProcessScroll() {
           <ol className={s.stages}>
             {STAGES.map((item, i) => (
               <li key={item.id} className={`${s.stage} ${i === stage ? s.active : ''}`}>
-                <span className={`${s.stageId} micro`}>{item.id}</span>
                 <span className={s.stageTitle}>{item.title}</span>
                 <span className={s.stageNote}>{item.note}</span>
               </li>
             ))}
           </ol>
-          <p className={`${s.counter} micro`}>{staticMode ? 'Static / 3 frames' : 'Scroll / reversible'}</p>
+          <p className={`${s.counter} micro`}>{staticMode ? 'Static frames' : 'Scroll reversible'}</p>
         </div>
       </div>
     </section>

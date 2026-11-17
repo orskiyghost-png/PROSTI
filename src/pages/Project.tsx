@@ -18,7 +18,7 @@ export default function Project() {
   const project = findProject(slug)
   const reduced = useReducedMotion()
   const rootRef = useRef<HTMLElement>(null)
-  useDocumentTitle(project ? `${project.title} — SURKOV` : '404 — SURKOV')
+  useDocumentTitle(project ? `${project.title} — SURKOV` : 'Not found — SURKOV')
 
   useEffect(() => {
     if (reduced || !rootRef.current || !project) return
@@ -54,7 +54,7 @@ export default function Project() {
       <header className={s.head}>
         <div className={`${s.meta} micro`}>
           <Link to="/works" className={s.back}>← Works</Link>
-          <span>[ 02.{String(index + 1).padStart(2, '0')} ] / Project</span>
+          <span>Project</span>
           <span>CONCEPT</span>
         </div>
         <h1 className={s.title} lang="en">{project.title}</h1>
@@ -71,15 +71,11 @@ export default function Project() {
         />
         <figcaption className={`${s.coverCaption} micro`}>
           <span>Cover — {project.title}</span>
-          <span>CONCEPT / {project.year}</span>
+          <span>CONCEPT</span>
         </figcaption>
       </figure>
 
       <dl className={s.passport}>
-        <div>
-          <dt className="micro">Год</dt>
-          <dd>{project.year}</dd>
-        </div>
         <div>
           <dt className="micro">Роль</dt>
           <dd>{project.role}</dd>
@@ -96,7 +92,7 @@ export default function Project() {
 
       <section className={s.story} aria-labelledby="task-heading">
         <div className={s.storyLabel} data-reveal>
-          <p className="micro">[ 01 ] / Task</p>
+          <p className="micro">Task</p>
           <h2 id="task-heading" className={s.storyTitle}>ЗАДАЧА</h2>
         </div>
         <div className={s.storyBody}>
@@ -110,7 +106,7 @@ export default function Project() {
 
       <section className={s.screens} aria-labelledby="screens-heading">
         <div className={s.screensHead} data-reveal>
-          <p className="micro">[ 02 ] / Screens</p>
+          <p className="micro">Screens</p>
           <h2 id="screens-heading" className={s.sectionTitle}>ЭКРАНЫ</h2>
           <p className={s.sectionNote}>
             Схема интерфейса собрана в коде. Фото — обложка концепта, не готовый экран.
@@ -127,24 +123,21 @@ export default function Project() {
               loading="lazy"
               decoding="async"
             />
-            <figcaption className="micro">FRAME 01 — COVER / CONCEPT</figcaption>
+            <figcaption className="micro">FRAME — COVER · CONCEPT</figcaption>
           </figure>
 
           <div className={s.uiScreen} data-reveal>
             <div className={`${s.uiBar} micro`}>
               <span>{project.title}</span>
-              <span>UI / CONCEPT</span>
+              <span>UI · CONCEPT</span>
             </div>
             <div className={s.uiBody}>
-              <p className={`${s.uiMeta} micro`}>{project.direction} — {project.year}</p>
+              <p className={`${s.uiMeta} micro`}>{project.direction}</p>
               <p className={s.uiTitle}>{project.title}</p>
               <div className={s.uiRule} />
               <ul className={s.uiRows}>
-                {project.system.slice(0, 3).map((item, rowIndex) => (
-                  <li key={item}>
-                    <span className="micro">{String(rowIndex + 1).padStart(2, '0')}</span>
-                    {item}
-                  </li>
+                {project.system.slice(0, 3).map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
               <div className={s.uiImage}>
@@ -160,7 +153,7 @@ export default function Project() {
             </div>
             <div className={`${s.uiFoot} micro`}>
               <span>CONCEPT</span>
-              <span>[ 0{index + 1} / 0{projects.length} ]</span>
+              <span>CONCEPT</span>
             </div>
           </div>
         </div>
@@ -168,13 +161,12 @@ export default function Project() {
 
       <section className={s.system} aria-labelledby="system-heading">
         <div className={s.systemHead} data-reveal>
-          <p className="micro">[ 03 ] / System</p>
+          <p className="micro">System</p>
           <h2 id="system-heading" className={s.systemTitle}>СИСТЕМА</h2>
         </div>
         <ul className={s.systemList}>
-          {project.system.map((item, systemIndex) => (
+          {project.system.map((item) => (
             <li key={item} data-reveal>
-              <span className="micro">{String(systemIndex + 1).padStart(2, '0')}</span>
               <p>{item}</p>
             </li>
           ))}
@@ -185,7 +177,7 @@ export default function Project() {
         <p className="micro">Следующий проект</p>
         <Link to={`/works/${next.slug}`} className={s.nextLink}>
           <span>{next.title}</span>
-          <span className={s.nextMeta}><span className="micro">{next.direction} / CONCEPT</span> ↗</span>
+          <span className={s.nextMeta}><span className="micro">{next.direction} · CONCEPT</span> ↗</span>
         </Link>
       </nav>
     </article>

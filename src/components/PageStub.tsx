@@ -11,12 +11,12 @@ type Props = {
   children?: ReactNode
 }
 
-export default function PageStub({ index, section, title, lead, back = { to: '/', label: 'На главную' }, children }: Props) {
+export default function PageStub({ section, title, lead, back = { to: '/', label: 'На главную' }, children }: Props) {
   return (
     <section className={s.stub}>
       <p className={`${s.meta} micro`}>
-        <span>[ {index} ] / {section}</span>
-        <span>Edition 0.1 — в работе</span>
+        <span>{section}</span>
+        <span>В работе</span>
       </p>
       <h1 className={s.title} lang="en">{title}</h1>
       <hr className={s.rule} />

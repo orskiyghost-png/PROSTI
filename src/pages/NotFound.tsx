@@ -6,7 +6,7 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import s from './NotFound.module.css'
 
 export default function NotFound() {
-  useDocumentTitle('404 — SURKOV')
+  useDocumentTitle('Not found — SURKOV')
   const reduced = useReducedMotion()
   const titleRef = useRef<HTMLHeadingElement>(null)
   const displacementRef = useRef<SVGFEDisplacementMapElement>(null)
@@ -44,15 +44,11 @@ export default function NotFound() {
   return (
     <section className={s.page}>
       <div className={`${s.meta} micro`}>
-        <span>[ 404 ] / Not found</span>
+        <span>Not found</span>
         <span>Page not printed</span>
       </div>
 
-      <h1 ref={titleRef} className={s.title} aria-label="404">
-        <span aria-hidden="true">4</span>
-        <span aria-hidden="true">0</span>
-        <span aria-hidden="true">4</span>
-      </h1>
+      <h1 ref={titleRef} className={s.title} lang="en">LOST</h1>
 
       <div className={s.rule} aria-hidden="true" />
 
@@ -63,7 +59,7 @@ export default function NotFound() {
         <Link to="/" className={s.link}>На главную <span aria-hidden="true">↗</span></Link>
       </div>
 
-      <p className={`${s.foot} micro`}>SURKOV / PRINT ERROR — 404 / END OF PAPER</p>
+      <p className={`${s.foot} micro`}>SURKOV · PRINT ERROR — END OF PAPER</p>
 
       <svg className={s.filterSvg} aria-hidden="true" focusable="false">
         <filter id="notfound-warp" x="-15%" y="-15%" width="130%" height="130%">

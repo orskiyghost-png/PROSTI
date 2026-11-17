@@ -26,9 +26,9 @@ export default function Contact() {
     const message = String(data.get('message') ?? '').trim()
     const nextErrors: FieldErrors = {}
 
-    if (name.length < 2) nextErrors.name = 'Укажите имя — минимум 2 символа.'
+    if (name.length < 2) nextErrors.name = 'Укажите имя — от двух символов.'
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) nextErrors.email = 'Укажите email в формате name@domain.ru.'
-    if (message.length < 10) nextErrors.message = 'Опишите задачу — минимум 10 символов.'
+    if (message.length < 10) nextErrors.message = 'Опишите задачу подробнее.'
 
     setErrors(nextErrors)
 
@@ -74,8 +74,8 @@ export default function Contact() {
     <article className={s.page}>
       <header className={s.head}>
         <div className={`${s.meta} micro`}>
-          <span>[ 04 ] / Contact</span>
-          <span>Open for projects — 2026</span>
+          <span>Contact</span>
+          <span>Open for projects</span>
         </div>
         <h1 className={s.title} lang="en">CONTACT</h1>
         <div className={s.rule} aria-hidden="true" />
@@ -123,7 +123,7 @@ export default function Contact() {
             ))}
             {pendingContacts && (
               <div className={s.pending}>
-                <dt className="micro">Email / TG / Tel</dt>
+                <dt className="micro">Контакты</dt>
                 <dd>будет добавлено</dd>
               </div>
             )}
@@ -143,13 +143,13 @@ export default function Contact() {
             height={1200}
             className={s.figureImage}
           />
-          <figcaption className="micro">FIG. 02 — STAND-IN / CONCEPT</figcaption>
+          <figcaption className="micro">FIG — STAND-IN · CONCEPT</figcaption>
         </figure>
       </div>
 
       <section className={s.band} aria-labelledby="band-heading">
         <div className={s.bandHead}>
-          <p className="micro">[ 04.1 ] / Note</p>
+          <p className="micro">Note</p>
           <h2 id="band-heading" className={s.bandTitle}>ОТКРЫТ К НОВЫМ ЗАДАЧАМ</h2>
           <p className={`${s.bandNote} micro`}>Один человек. Четыре направления. Прямой разговор.</p>
         </div>
@@ -165,7 +165,7 @@ export default function Contact() {
 
       <section className={s.formSection} aria-labelledby="form-heading">
         <div className={s.formHead}>
-          <p className="micro">[ 04.2 ] / Form</p>
+          <p className="micro">Form</p>
           <h2 id="form-heading" className={s.formTitle}>НАПИСАТЬ</h2>
           <p className={s.formNote}>
             Коротко о задаче, сроках и ссылках. Поля с ошибками подсвечиваются подписью под линией.
