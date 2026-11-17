@@ -4,6 +4,13 @@
 **7 — аудит unslop и удаление декоративной нумерации.** Правки внесены, сборка проходит.
 Сайт live: https://orskiyghost-png.github.io/PROSTI/
 
+## Чистый подвал (2026-11-17)
+- Убраны дублирующий мега-заголовок `SURKOV`, кредиты шрифтов, `Print error` и лишняя
+  строка метаданных. Осталась одна система: бренд, роль, навигация, копирайт и метка
+  `CONCEPT`.
+- Локация сокращена до страны; `город TBA` больше не выводится. Тап-зоны ссылок сохранены.
+- `npm run build` проходит.
+
 ## Смена шрифта на Montserrat (2026-11-17)
 - `@fontsource-variable/inter-tight` заменён на `@fontsource-variable/montserrat`. Импорт в
   `src/main.tsx`, токен `--f-display` в `src/styles/tokens.css`. JetBrains Mono оставлен для
