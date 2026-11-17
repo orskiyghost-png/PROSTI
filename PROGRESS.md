@@ -4,6 +4,13 @@
 **7 — аудит unslop и удаление декоративной нумерации.** Правки внесены, сборка проходит.
 Сайт live: https://orskiyghost-png.github.io/PROSTI/
 
+## Смена шрифта на Montserrat (2026-11-17)
+- `@fontsource-variable/inter-tight` заменён на `@fontsource-variable/montserrat`. Импорт в
+  `src/main.tsx`, токен `--f-display` в `src/styles/tokens.css`. JetBrains Mono оставлен для
+  микротекста.
+- Обновлены упоминания в `DESIGN.md`, `src/components/Footer.tsx`, `src/content/projects.ts`.
+- `npm run build` проходит; в бандле только subset `latin + cyrillic`.
+
 ## Удаление цифр, скобок и слешей + аудит unslop (2026-11-17)
 - Аудит по `unslop`: тяжёлого визуального слопа нет. Монохром, ксерокс-фактура, коллаж
   и дисторшн соответствуют характеру. Проблема была в шумном интерфейсном хроме:

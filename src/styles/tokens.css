@@ -20,7 +20,7 @@
   --selection-bg: #0B0B0B;
   --selection-fg: #EDEBE6;
 
-  --f-display: 'Inter Tight Variable', 'Inter Tight', system-ui, sans-serif;
+  --f-display: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
   --f-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   --t-mega: clamp(4.5rem, 17vw, 16rem);

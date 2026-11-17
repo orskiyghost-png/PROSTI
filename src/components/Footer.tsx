@@ -21,7 +21,7 @@ export default function Footer() {
       <p className={s.mega} aria-hidden="true">SURKOV</p>
       <div className={`${s.row} micro`}>
         <span>© {config.nameLatin}</span>
-        <span>Set in Inter Tight &amp; JetBrains Mono</span>
+        <span>Set in Montserrat &amp; JetBrains Mono</span>
         <span>Print error</span>
       </div>
     </footer>

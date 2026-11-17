@@ -27,7 +27,7 @@ export const projects: Project[] = [
     solution: 'Жёсткая сетка, крупные планы бетона и навигация по эпохам. Карточки заменены каталожными строками с индексами и координатами.',
     system: [
       'Сетка, единый модуль',
-      'Inter Tight и JetBrains Mono',
+      'Montserrat и JetBrains Mono',
       'Hover: инверсия строки и displacement фото',
       'WebGL-переход между эпохами',
     ],
