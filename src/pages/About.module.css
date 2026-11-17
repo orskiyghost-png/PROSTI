@@ -12,9 +12,9 @@
 .title {
   margin: var(--s-5) 0 var(--s-5) -0.04em;
   font-size: var(--t-mega);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.78;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -37,9 +37,9 @@
 }
 .lead {
   font-size: var(--t-h2);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.02;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   max-width: 22ch;
 }
 .body {
@@ -86,7 +86,7 @@
 .sectionTitle {
   font-size: var(--t-h1);
   line-height: 0.82;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
 }
 .sectionNote {
   justify-self: end;
@@ -109,9 +109,9 @@
 .principleNum { color: var(--ink-3); }
 .principleTitle {
   font-size: var(--t-h3);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
 }
 .principleText {
   max-width: 46ch;
@@ -137,7 +137,7 @@
 .toolsTitle {
   font-size: var(--t-h1);
   line-height: 0.82;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
 }
 .toolsNote {
   max-width: 30ch;
@@ -171,9 +171,9 @@
   gap: var(--s-3);
   min-height: var(--tap);
   font-size: var(--t-h2);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.9;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   border-bottom: 2px solid currentColor;
 }

@@ -18,9 +18,9 @@
 .head :global(.micro) { color: var(--on-void-2); }
 .title {
   font-size: clamp(2.5rem, 6vw, 6rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.82;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
 }
 .lead {
   max-width: 42ch;
@@ -69,7 +69,7 @@
   transition: color var(--d-short);
 }
 .stageId { color: inherit; }
-.stageTitle { font-weight: 800; letter-spacing: -0.01em; }
+.stageTitle { font-weight: 700; letter-spacing: 0.01em; }
 .stageNote {
   grid-column: 1 / -1;
   margin-top: var(--s-2);

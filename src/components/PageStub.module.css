@@ -6,15 +6,15 @@
 }
 .meta { display: flex; justify-content: space-between; gap: var(--s-4); color: var(--ink-3); }
 .title {
-  font-size: var(--t-mega); font-weight: 900; line-height: .82; letter-spacing: -0.065em;
+  font-size: var(--t-mega); font-weight: 700; line-height: .82; letter-spacing: -0.045em;
   text-transform: uppercase; white-space: nowrap; margin-left: -0.04em;
 }
 .rule { border: 0; height: 1px; background: var(--rule); margin: 0 calc(var(--margin) * -1); }
-.lead { font-size: var(--t-lead); line-height: 1.25; letter-spacing: -0.015em; max-width: 38ch; margin-left: auto; color: var(--ink-2); }
+.lead { font-size: var(--t-lead); line-height: 1.25; letter-spacing: 0.005em; max-width: 38ch; margin-left: auto; color: var(--ink-2); }
 .back {
   align-self: flex-start; display: inline-flex; align-items: center; gap: var(--s-2);
   min-height: var(--tap); margin-top: auto;
-  font-size: var(--t-h3); font-weight: 800; letter-spacing: -0.03em;
+  font-size: var(--t-h3); font-weight: 700; letter-spacing: -0.01em;
   text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px;
 }
 .back:hover { text-decoration-style: wavy; }

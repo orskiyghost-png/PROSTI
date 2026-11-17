@@ -25,9 +25,9 @@
   display: flex;
   transform: translate(-50%, -50%);
   font-size: clamp(4.75rem, 17vw, 16rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.78;
-  letter-spacing: -0.075em;
+  letter-spacing: -0.055em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -79,9 +79,9 @@
 }
 .position {
   font-size: var(--t-lead);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0em;
   max-width: 18ch;
 }
 .disciplines { color: var(--ink-3); }
@@ -113,9 +113,9 @@
 .introWord {
   align-self: center;
   font-size: clamp(4rem, 16vw, 15rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.78;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.05em;
 }
 .introFoot { color: var(--on-void-2); }
 
@@ -135,9 +135,9 @@
 .manifestNote { text-align: right; max-width: 28ch; }
 .manifestText {
   font-size: clamp(3rem, 11vw, 10.5rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.8;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.045em;
   text-transform: uppercase;
 }
 .lineMask { display: block; overflow: clip; padding: 0.04em 0.02em; }
@@ -159,9 +159,9 @@
 .close :global(.micro) { color: var(--on-void-2); }
 .closeTitle {
   font-size: clamp(4rem, 16vw, 15rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.76;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.05em;
 }
 .closeLink {
   justify-self: start;
@@ -172,8 +172,8 @@
   padding-bottom: var(--s-1);
   border-bottom: 2px solid currentColor;
   font-size: var(--t-h3);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 .closeLink span { transition: transform var(--d-short) var(--ease-snap); }
 .closeLink:hover span { transform: translate(5px, -5px); }

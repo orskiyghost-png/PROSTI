@@ -51,8 +51,8 @@
 .big {
   display: flex; align-items: baseline; gap: var(--s-4);
   padding: var(--s-2) 0;
-  font-size: clamp(2.75rem, 13vw, 6rem); font-weight: 900;
-  line-height: .9; letter-spacing: -0.055em; text-transform: uppercase;
+  font-size: clamp(2.75rem, 13vw, 6rem); font-weight: 700;
+  line-height: .9; letter-spacing: -0.035em; text-transform: uppercase;
 }
 .big :global(.micro) { color: var(--on-void-2); letter-spacing: .08em; }
 .big:focus-visible { outline-color: var(--on-void); }

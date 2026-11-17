@@ -14,7 +14,7 @@
 .links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .links a:focus-visible { outline-color: var(--on-void); }
 .mega {
-  font-size: var(--t-mega); font-weight: 900; line-height: .82; letter-spacing: -0.065em;
+  font-size: var(--t-mega); font-weight: 700; line-height: .82; letter-spacing: -0.045em;
   white-space: nowrap; margin: var(--s-5) 0 var(--s-4);
 }
 @media (min-width: 1024px) {

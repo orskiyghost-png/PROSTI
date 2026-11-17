@@ -20,9 +20,9 @@
 .title {
   margin: var(--s-5) 0 var(--s-5) -0.04em;
   font-size: clamp(2.6rem, 11vw, 11rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.8;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
 }
 .rule {
@@ -36,7 +36,7 @@
   color: var(--ink-2);
   font-size: var(--t-lead);
   line-height: 1.25;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.005em;
 }
 .cover {
   margin: var(--s-8) calc(var(--margin) * -1) 0;
@@ -63,7 +63,7 @@
 }
 .passport div + div { border-left: 1px solid var(--rule-soft); padding-left: var(--s-4); }
 .passport dt { color: var(--ink-3); }
-.passport dd { font-size: var(--t-small); font-weight: 600; }
+.passport dd { font-size: var(--t-small); font-weight: 500; }
 .story {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 8fr);
@@ -79,7 +79,7 @@
 .storyTitle {
   font-size: var(--t-h1);
   line-height: 0.82;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
 }
 .storyBody {
   display: grid;
@@ -88,9 +88,9 @@
 .task {
   max-width: 24ch;
   font-size: var(--t-h2);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 .solution {
   display: grid;
@@ -125,7 +125,7 @@
 .sectionTitle {
   font-size: var(--t-h1);
   line-height: 0.82;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
 }
 .sectionNote {
   justify-self: end;
@@ -180,9 +180,9 @@
 .uiMeta { color: var(--ink-3); }
 .uiTitle {
   font-size: clamp(1.75rem, 3vw, 3rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.86;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
   overflow-wrap: anywhere;
 }
 .uiRule { height: 1px; background: var(--ink); }
@@ -229,7 +229,7 @@
 .systemTitle {
   font-size: var(--t-h1);
   line-height: 0.82;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
 }
 .systemList { list-style: none; }
 .systemList li {
@@ -257,9 +257,9 @@
   padding-bottom: var(--s-3);
   border-bottom: 2px solid var(--ink);
   font-size: clamp(2.5rem, 8vw, 7rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.84;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
 }
 .nextMeta {
@@ -268,7 +268,7 @@
   gap: var(--s-3);
   flex-shrink: 0;
   font-size: var(--t-h3);
-  letter-spacing: -0.02em;
+  letter-spacing: 0em;
 }
 .nextMeta :global(.micro) { font-size: var(--t-micro); color: var(--ink-3); text-align: right; }
 .nextLink:hover > span:first-child { transform: translateX(10px); }

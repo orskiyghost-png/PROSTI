@@ -18,9 +18,9 @@
   display: flex;
   margin-left: -0.05em;
   font-size: clamp(8rem, 38vw, 32rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.72;
-  letter-spacing: -0.09em;
+  letter-spacing: -0.07em;
   text-transform: uppercase;
   user-select: none;
 }
@@ -50,8 +50,8 @@
   padding-bottom: var(--s-1);
   border-bottom: 2px solid currentColor;
   font-size: var(--t-h3);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   white-space: nowrap;
 }
 .link span { transition: transform var(--d-short) var(--ease-snap); }

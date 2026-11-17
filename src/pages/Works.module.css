@@ -12,9 +12,9 @@
 .title {
   margin: var(--s-5) 0 var(--s-5) -0.04em;
   font-size: var(--t-mega);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.78;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -35,7 +35,7 @@
   color: var(--ink-2);
   font-size: var(--t-lead);
   line-height: 1.25;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.005em;
 }
 .filters {
   display: flex;
@@ -119,9 +119,9 @@
 .captionIndex { grid-column: 1 / -1; color: var(--ink-3); }
 .name {
   font-size: var(--t-h3);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.95;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.025em;
 }
 .captionMeta { color: var(--ink-3); text-align: right; }
 .status {
@@ -143,9 +143,9 @@
   gap: var(--s-3);
   min-height: var(--tap);
   font-size: var(--t-h2);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.9;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   border-bottom: 2px solid currentColor;
 }

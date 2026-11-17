@@ -44,7 +44,7 @@ Nice-to-have (`float-03`, `about-space`, `work-null-archive-detail`, `work-toner
 
 ---
 
-### 1. `hero-object.webp` — M — todo
+### 1. `hero-object.webp` — M — generated
 - Страница: Home, hero, центр композиции (под WebGL-дисторшн, нужна альфа).
 - Модель: FLUX.2 Pro. AR 1:1, 2048px.
 - Промпт:
@@ -55,7 +55,7 @@ only static noise. Hard single light from top left, long black cast shadow to th
 centered, entire object visible with generous white margin for clean cut-out. [STYLE]
 ```
 
-### 2. `float-01.webp` — M — todo
+### 2. `float-01.webp` — M — generated
 - Home, hero, плавающее фото слева сверху. Вырезанная фигура, альфа.
 - Модель: Seedream 5.5. AR 3:4.
 - Промпт:
@@ -65,7 +65,7 @@ from a low angle, on a plain white background for cut-out. Sharp silhouette edge
 as pure black shapes. [STYLE]
 ```
 
-### 3. `float-02.webp` — M — todo
+### 3. `float-02.webp` — M — generated
 - Home, hero, плавающее фото справа снизу.
 - Модель: FLUX.2 Pro. AR 4:5.
 - Промпт:
@@ -83,7 +83,7 @@ Brutalist concrete staircase seen from directly above, spiral geometry, a tiny l
 bottom, strong diagonal shadow cutting the frame in half. Architectural photograph. [STYLE]
 ```
 
-### 5. `about-portrait.webp` — M — todo
+### 5. `about-portrait.webp` — M — generated
 - About, главный портрет (stand-in, не Артём). Canvas-halftone проявление.
 - Модель: FLUX.2 Pro. AR 4:5, 2048px.
 - Промпт:
@@ -102,7 +102,7 @@ Empty underground pedestrian passage with raw concrete walls and a row of fluore
 flickering out, perfect one-point perspective, wet floor reflecting light. Wide architectural frame. [STYLE]
 ```
 
-### 7. `work-null-archive-cover.webp` — M — todo
+### 7. `work-null-archive-cover.webp` — M — generated
 - Works + Project «NULL/ARCHIVE» (CONCEPT), обложка.
 - Модель: FLUX.2 Pro. AR 16:9.
 - Промпт:
@@ -121,7 +121,7 @@ Macro detail of weathered raw concrete with formwork wood-grain imprint and a sh
 balcony slab, abstract and tactile. [STYLE]
 ```
 
-### 9. `work-toner-cover.webp` — M — todo
+### 9. `work-toner-cover.webp` — M — generated
 - Works + Project «TONER» (CONCEPT), обложка.
 - Модель: Seedream 5.5. AR 4:5.
 - Промпт:
@@ -140,7 +140,7 @@ Side view of an old office photocopier mid-copy, bright light bar sweeping under
 of light, dark room, a hand resting on the lid. [STYLE]
 ```
 
-### 11. `work-signal-cover.webp` — M — todo
+### 11. `work-signal-cover.webp` — M — generated
 - Works + Project «SIGNAL 0» (CONCEPT), обложка.
 - Модель: FLUX.2 Pro. AR 4:5.
 - Промпт:
@@ -149,7 +149,7 @@ Figure in a black balaclava and headphones sitting at a cluttered radio desk wit
 face mostly in deep shadow, single hard side light, wires and knobs as graphic black shapes. [STYLE]
 ```
 
-### 12. `work-concrete-cover.webp` — M — todo
+### 12. `work-concrete-cover.webp` — M — generated
 - Works + Project «CONCRETE.DEV» (CONCEPT), обложка.
 - Модель: Recraft V4.1 (raster, photo style). AR 16:9.
 - Промпт:
@@ -158,7 +158,7 @@ A row of three old laptops standing open on a raw concrete floor in an empty war
 blank white, long parallel shadows across the floor, high window light from the left. [STYLE]
 ```
 
-### 13. `tex-services.webp` — M — todo
+### 13. `tex-services.webp` — M — generated
 - Services, фоновая фактура (repeat-friendly), opacity в вёрстке 0.3–0.6.
 - Модель: Recraft V4.1. AR 1:1, 2048px.
 - Промпт:
@@ -167,7 +167,7 @@ Seamless tileable texture of a photocopied blank sheet of paper: toner dust, fai
 patches, coarse halftone noise, scanner edge shadow. Flat, even, no objects. [STYLE]
 ```
 
-### 14. `contact-crowd.webp` — M — todo
+### 14. `contact-crowd.webp` — M — generated
 - Contact, панорама под чёрной плашкой (как в референсе — собственная версия). Силуэт, альфа по небу.
 - Модель: FLUX.2 Pro. AR 21:9 (или 16:9 с кропом).
 - Промпт:
@@ -177,7 +177,7 @@ of a concrete structure, pale empty sky above, nobody facing the camera, silhoue
 dark mass. [STYLE]
 ```
 
-### 15. `contact-figure.webp` — M — todo
+### 15. `contact-figure.webp` — M — generated
 - Contact, вертикальная вырезанная фигура рядом с блоком `;INFO`. Альфа.
 - Модель: Seedream 5.5. AR 3:4.
 - Промпт:
@@ -186,10 +186,10 @@ Full-body figure in a long dark trench coat walking away, holding a large blank 
 arm, plain white background for cut-out, hard shadow on the ground. [STYLE]
 ```
 
-### 16. `process-loop.mp4` → `frames/process-####.webp` — M — todo
+### 16. `process-loop.mp4` → `frames/process-####.webp` — M — generated / processed
 - Home, секция Process, видеоскролл (scrub по кадрам, §7.3 DESIGN.md).
 - Модель: Veo 3.1 (основная), Kling 3.0 Pro (резерв), Seedance 2.5 / Wan 3.0 (запас).
-- AR 16:9, 1080p, **10 сек**, 24 fps, без звука.
+- AR 16:9, 1080p, **8 сек**, 24 fps, без звука.
 - Промпт:
 ```
 A single slow continuous camera move, no cuts. The camera glides forward at walking pace through a dim
@@ -201,7 +201,7 @@ no readable text on any surface. [STYLE]
 ```
 - Обработка: `ffmpeg` → 120 кадров 1280px WebP (desktop), 60 кадров 640px (mobile), q≈70.
 
-### 17. `process-poster-01..03.webp` — M — todo
+### 17. `process-poster-01..03.webp` — M — processed
 - Home, Process: фолбэк reduced-motion / слабые устройства + `poster`.
 - Источник: кадры 0%, 50%, 100% из `process-loop.mp4`. Если видео не сгенерировано — те же три сцены
   моделью FLUX.2 Pro (AR 16:9) по описанию промпта №16, разделённому на три кадра, и честная пометка в PROGRESS.
